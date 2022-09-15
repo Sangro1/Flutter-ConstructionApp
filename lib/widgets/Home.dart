@@ -21,9 +21,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -74,44 +71,72 @@ class _MyHomePageState extends State<MyHomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/Login');
-                      },
-                      child: const Text(
-                        'Login',
-                        style: TextStyle(color: Colors.black87),
+                    Container(
+                    height: 55,
+                    width: 170,
+                    child: Material(
+                      borderRadius: BorderRadius.circular(13),
+                      shadowColor: Colors.orangeAccent,
+                      elevation: 7,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/Login');
+                        },
+                        child: const Center(
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                                color: Colors.black87,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Montserrat'),
+                          ),
+                        ),
                       ),
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/Register');
-                      },
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(color: Colors.white70),
+                    ),
+                    Container(
+                      height: 55,
+                      width: 170,
+                      child: Material(
+                        borderRadius: BorderRadius.circular(13),
+                        color: Colors.blue,
+                        shadowColor: Colors.orangeAccent,
+                        elevation: 7,
+                        child: GestureDetector(
+                          onTap: () {
+                           Navigator.pushNamed(context,'/ForgotRoute');
+                          },
+                          child: const Center(
+                            child: Text(
+                              'Register',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat'),
+                            ),
+                          ),
+                        ),
                       ),
+                    ),
+                      ],
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text(
-                      'SKIP',
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 18,
-                      ),
-                    )),
-              ],
             ),
+
           ),
-        ),
+         // child: InkWell(
+         //        onTap: () {
+         //          Navigator.pop(context);
+         //        },
+         //        child: Text(
+         //          'SKIP',
+         //          style: TextStyle(
+         //            color: Colors.white70,
+         //            fontSize: 18,
+         //          ),
+         //        ),
+         //    ),
       ),
     );
   }
