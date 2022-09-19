@@ -20,6 +20,7 @@ class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // resizeToAvoidBottomInset: false,
         body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
     child:Container(
@@ -180,7 +181,7 @@ class _loginPageState extends State<loginPage> {
                             elevation: 7,
                             child: GestureDetector(
                               onTap: () {
-                                Navigator.pushNamed(context, '/registerRoute ');
+                                Navigator.pushNamed(context, '/registerRoute');
                               },
                               child: const Center(
                                 child: Text(
