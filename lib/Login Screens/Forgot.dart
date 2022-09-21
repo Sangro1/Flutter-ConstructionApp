@@ -4,33 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ForgotWidget extends StatefulWidget {
-  const ForgotWidget({Key? key}) : super(key: key);
-  @override
-  State<ForgotWidget> createState() => _ForgotWidgetState();
-}
+class ForgotWidget extends StatelessWidget{
+  const ForgotWidget ({Key? key}): super(key:key);
 
-class _ForgotWidgetState extends State<ForgotWidget> {
-  final GlobalKey<FormState> _fromKey = GlobalKey<FormState>();
-
-  UnfocusDisposition disposition = UnfocusDisposition.scope;
-  String email = '';
-  String isValid = '';
-  //return Stack(
-  //     alignment: Alignment.topLeft,
-  //     children: <Widget>[
-  //       YourScrollViewWidget(),
-  //       IconButton(
-  //         icon: Icon(Icons.arrow_back),
-  //         onPressed: (){
-  //           Navigator.pop(context);
-  //         },
-  //       )
-  //     ],
-  //   );
   @override
   Widget build(BuildContext context) {
+    String email='', pass= '';
     final Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
@@ -129,7 +110,7 @@ class _ForgotWidgetState extends State<ForgotWidget> {
                         ),
 
                       ),
-                      SizedBox(height: 190,
+                      SizedBox(height: 200,
                       ),
                    Text('Did not get yet?',
                 style: GoogleFonts.lato(
@@ -142,7 +123,7 @@ class _ForgotWidgetState extends State<ForgotWidget> {
                         // padding: EdgeInsets.only(top: 4, left: 10),
                         child:InkWell(
                           onTap: (){
-                            // Navigator.pushNamed(context, '/ForgotRoute');
+                            Navigator.pushNamed(context, '/ForgotRoute');
                           },
                           child: Text(
                             'Resend',

@@ -4,22 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  // PageController pageController = PageController(viewportFraction: 0.85);
-  var _currPageValue = 0.0;
-  // var _progressIndicator = false;
-  // double _scaleFactor = 0.8;
+class MyHomePage  extends StatelessWidget {
+  const MyHomePage ({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // PageController pageController = PageController(viewportFraction: 0.85);
+    var _currPageValue = 0.0;
+    // var _progressIndicator = false;
+    // double _scaleFactor = 0.8;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
@@ -33,6 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
           filter: ImageFilter.blur(sigmaX: 7.0, sigmaY: 7.0),
           child: Container(
             decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
+
             child: Column(
               children: [
                 SizedBox(height: 100),
@@ -40,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   'N U L E A S E',
                   style: GoogleFonts.lato(
                     textStyle:
-                        TextStyle(color: Colors.black87, letterSpacing: .5),
+                    TextStyle(color: Colors.black87, letterSpacing: .5),
                     fontSize: 35,
                     fontWeight: FontWeight.w700,
                   ),
@@ -50,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   'Introducing the\nLandloard/Tenants App\nfrom Nulease.',
                   style: GoogleFonts.roboto(
                     textStyle:
-                        TextStyle(color: Colors.white70, letterSpacing: .5),
+                    TextStyle(color: Colors.white70, letterSpacing: .5),
                     fontSize: 25,
                     fontWeight: FontWeight.w700,
                   ),
@@ -68,44 +63,46 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 const Padding(
                     padding:
-                        EdgeInsets.symmetric(vertical: 10, horizontal: 10)),
+                    EdgeInsets.symmetric(vertical: 10, horizontal: 10)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                    height: 55,
-                    width: 170,
-                    child: Material(
-                      borderRadius: BorderRadius.circular(13),
-                      shadowColor: Colors.orangeAccent,
-                      elevation: 7,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/Login');
-                        },
-                        child: const Center(
-                          child: Text(
-                            'Login',
-                            style: TextStyle(
-                                color: Colors.black87,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Montserrat'),
+                      height: 55,
+                      width: 170,
+                      child: Material(
+                        borderRadius: BorderRadius.circular(10),
+                        shadowColor: Colors.black,
+                        elevation: 12,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context,'/Login');
+                          },
+                          child: const Center(
+                            child: Text(
+                              'Login',
+                              style: TextStyle(
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 20,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
                     ),
                     Container(
                       height: 55,
                       width: 170,
                       child: Material(
-                        borderRadius: BorderRadius.circular(13),
+                        borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
-                        shadowColor: Colors.orangeAccent,
-                        elevation: 7,
+                        shadowColor: Colors.black,
+                        elevation: 12,
                         child: GestureDetector(
                           onTap: () {
-                           Navigator.pushNamed(context,'/ForgotRoute');
+                            Navigator.pushNamed(context,'/registerRoute');
                           },
                           child: const Center(
                             child: Text(
@@ -113,32 +110,45 @@ class _MyHomePageState extends State<MyHomePage> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'Montserrat'),
+                                  fontFamily: 'Montserrat',
+                                fontSize: 20,
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                      ],
-                    ),
                   ],
                 ),
+                SizedBox(height:15),
+
+                InkWell(
+                  onTap: () {
+                    // Navigator.pushNamed(context, "/submitRoute");
+                  },
+                  child: Text(
+                    'SKIP',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ],
             ),
 
+
+
           ),
-         // child: InkWell(
-         //        onTap: () {
-         //          Navigator.pop(context);
-         //        },
-         //        child: Text(
-         //          'SKIP',
-         //          style: TextStyle(
-         //            color: Colors.white70,
-         //            fontSize: 18,
-         //          ),
-         //        ),
-         //    ),
+        ),
       ),
     );
   }
-}
+  }
+
+
+
+
+
+
+

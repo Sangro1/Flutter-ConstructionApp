@@ -39,50 +39,47 @@ class VerfiWidget extends StatelessWidget {
                 SizedBox(
                   height: 100,
                 ),
-                Text("Verification Code",
+                Text(
+                  "Verification Code",
                   style: GoogleFonts.lato(
-                    textStyle: TextStyle(color: Colors.white),
+                    textStyle:
+                        TextStyle(color: Colors.white, letterSpacing: .5),
                     fontSize: 30,
                     fontWeight: FontWeight.w900,
-                  ),),
+                  ),
+                ),
                 SizedBox(height: 5),
                 Text(
-                    "We have just sent a code to your mobile\nplease enter it below",
+                  "We have just sent a code to your mobile\nplease enter it below",
                   style: GoogleFonts.lato(
                     textStyle: TextStyle(color: Colors.white),
                     fontSize: 19,
                     fontWeight: FontWeight.w400,
-                  ),),
+                  ),
+                ),
                 SizedBox(
                   height: 100,
                 ),
-                const Padding(padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      height: 50,width:75,
+                      height: 50,
+                      width: 75,
                       child: Material(
                         borderRadius: BorderRadius.circular(12),
                         shadowColor: Colors.grey,
                         elevation: 13,
                         color: Colors.grey,
-
-                    ),
-                    ),
-                    Container(
-                      height: 50,width: 75,
-                      child: Material(
-                        borderRadius: BorderRadius.circular(13),
-                        shadowColor: Colors.grey,
-                        elevation: 13,
-                        color: Colors.grey,
-
                       ),
                     ),
                     Container(
-                      height: 50,width: 75,
+                      height: 50,
+                      width: 75,
                       child: Material(
                         borderRadius: BorderRadius.circular(13),
                         shadowColor: Colors.grey,
@@ -91,7 +88,18 @@ class VerfiWidget extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      height: 50,width: 75,
+                      height: 50,
+                      width: 75,
+                      child: Material(
+                        borderRadius: BorderRadius.circular(13),
+                        shadowColor: Colors.grey,
+                        elevation: 13,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Container(
+                      height: 50,
+                      width: 75,
                       child: Material(
                         borderRadius: BorderRadius.circular(13),
                         shadowColor: Colors.grey,
@@ -101,12 +109,12 @@ class VerfiWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 40,),
+                SizedBox(
+                  height: 40,
+                ),
                 Padding(
-                  padding:
-                  EdgeInsets.symmetric(vertical: 35, horizontal: 16),
-                  child:
-                  Container(
+                  padding: EdgeInsets.symmetric(vertical: 35, horizontal: 16),
+                  child: Container(
                     height: 50,
                     child: Material(
                       borderRadius: BorderRadius.circular(14),
@@ -115,7 +123,7 @@ class VerfiWidget extends StatelessWidget {
                       elevation: 13,
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/Login');
+                          Navigator.pushNamed(context, '/submitRoute');
                         },
                         child: const Center(
                           child: Text(
@@ -130,36 +138,44 @@ class VerfiWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                child:Text('Did not get yet?',
-                  style: GoogleFonts.lato(
-                    textStyle: TextStyle(color: Colors.white),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),),),
-                Container(
-                  child:InkWell(
-                    onTap: (){
-                      // Navigator.pushNamed(context, '/ForgotRoute');
-                    },
-                    child: Text(
-                      'Resend',
-                      style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          fontFamily: 'RobotoMono',
-                          decoration: TextDecoration.underline),
-                    ),
-                  ),
+                SizedBox(
+                  height: 230,
                 ),
-
-              ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:[
+              Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Did not get yet?',
+                style: GoogleFonts.lato(
+                  textStyle: TextStyle(color: Colors.white),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+              Container(
+              alignment:Alignment.bottomCenter,
+              child: InkWell(
+                onTap: () {
+                  // Navigator.pushNamed(context, '/ForgotRoute');
+                },
+                child: Text(
+                  'Resend',
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      fontFamily: 'RobotoMono',
+                      decoration: TextDecoration.underline),
+                ),
+              ),
+            ),],),
+            ],
             ),
 
           ),
-
         ),
       ),
     );
