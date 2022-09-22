@@ -61,11 +61,12 @@ class MyHomePage  extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5.0)),
                   ),
                 ),
+                SizedBox(height: 25,),
                 const Padding(
                     padding:
                     EdgeInsets.symmetric(vertical: 10, horizontal: 10)),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       height: 55,
@@ -92,6 +93,7 @@ class MyHomePage  extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(width: 10),
                     Container(
                       height: 55,
                       width: 170,
@@ -120,8 +122,11 @@ class MyHomePage  extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height:15),
+                SizedBox(height: 15,),
+                Align(
+                  alignment: Alignment.bottomCenter,
 
+                  child:
                 InkWell(
                   onTap: () {
                     // Navigator.pushNamed(context, "/submitRoute");
@@ -131,8 +136,10 @@ class MyHomePage  extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 18,
+                      decoration: TextDecoration.underline,
                     ),
                   ),
+                ),
                 ),
               ],
             ),

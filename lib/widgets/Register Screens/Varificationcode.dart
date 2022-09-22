@@ -144,7 +144,7 @@ class VerfiWidget extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:[
-              Container(
+              Container (
               alignment: Alignment.centerLeft,
               child: Text(
                 'Did not get yet?',

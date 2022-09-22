@@ -14,6 +14,10 @@ class _RegisterWidgetState extends State<RegisterWidget> {
   String email = '', pass = '', name = '', last = '';
   bool _isObsecure = false;
 
+
+  final double topWidgetHeight = 40.0;
+  final double avatarRadius = 20.0;
+
   @override
   void initState() {
     super.setState(() {});
@@ -50,6 +54,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.0),
               ),
+              child:SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -88,10 +93,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     children: [
                       // Landlord,
                       Container(
-                        height: 50,
-                        width: 170,
+                        height: 55,
+                        width: 180,
                         child: Material(
-                          borderRadius: BorderRadius.circular(13),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(13),
+                            bottomLeft:Radius.circular(13),
+                          ),
                           shadowColor: Colors.black,
                           color: Colors.white,
                           elevation: 12,
@@ -112,34 +120,49 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                       ),
-                      Container(
-                        child: Material(
-                          borderRadius: BorderRadius.circular(30),
-                          shadowColor: Colors.black,
-                          color: Colors.blue,
-                          elevation: 12,
-                          child: Center(
-                            child: Text(
-                              "or",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontFamily: "Montserrat"),
-                            ),
-                          ),
+
+                      Positioned(
+                        child: CircleAvatar(
+                          radius: avatarRadius,
+                          backgroundColor: Colors.blue,
+                          child:Text('or')
                         ),
+                        left: (MediaQuery.of(context).size.width/2) - avatarRadius,
+                        top: topWidgetHeight - avatarRadius,
                       ),
+
+                      // Container(
+                      //   child: Material(
+                      //     borderRadius: BorderRadius.circular(30),
+                      //     shadowColor: Colors.black,
+                      //     color: Colors.blue,
+                      //     elevation: 12,
+                      //     child: Center(
+                      //       child: Text(
+                      //         "or",
+                      //         style: TextStyle(
+                      //             color: Colors.white,
+                      //             fontSize: 16,
+                      //             fontFamily: "Montserrat"),
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       Container(
-                        height: 50,
-                        width: 170,
+                        height: 55,
+                        width: 180,
                         child: Material(
-                          borderRadius: BorderRadius.circular(13),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(13),
+                            bottomRight: Radius.circular(13),
+                          ),
                           shadowColor: Colors.black,
                           color: Colors.blue,
                           elevation: 12,
                           child: GestureDetector(
                             onTap: () {
                               // Navigator.pushNamed(context, '/');
+
                             },
                             child: const Center(
                               child: Text(
@@ -166,8 +189,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         //first name
                         Flexible(
                           child: TextFormField(
+                            // style: TextStyle(fontSize:10, color: Colors.red),
                             decoration: InputDecoration(
-                              fillColor: Colors.grey,
+                              fillColor: Colors.black,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(14.7),
                               ),
@@ -179,6 +203,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         //last name
                         Flexible(
                           child: TextFormField(
+                            // style: TextStyle(fontSize:15),
                             textInputAction: TextInputAction.next,
                             decoration: InputDecoration(
                               fillColor: Colors.grey,
@@ -193,7 +218,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                   ),
                   SizedBox(
-                    height: 16,
+                    height: 10,
                   ),
 
                   //Email AD
@@ -201,6 +226,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     padding:
                         EdgeInsets.symmetric(vertical: 9.3, horizontal: 14.3),
                     child: TextFormField(
+                      // style: TextStyle(fontSize:10, color: Colors.red),
                       textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
                         fillColor: Colors.grey,
@@ -221,6 +247,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     padding:
                         EdgeInsets.symmetric(vertical: 9.3, horizontal: 14.3),
                     child: TextFormField(
+                      // style: TextStyle(fontSize:10, color: Colors.red),
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -239,6 +266,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     padding:
                         EdgeInsets.symmetric(vertical: 9.3, horizontal: 14.3),
                     child: TextFormField(
+                      // style: TextStyle(fontSize:10, color: Colors.red),
                       textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
                         fillColor: Colors.grey,
@@ -322,6 +350,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
             ),
           ),
         ),
+      ),
       ),
     );
   }

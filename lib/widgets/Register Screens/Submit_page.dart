@@ -101,7 +101,7 @@ class _submitWidgetState extends State<submitWidget> {
                     ],
                   ),
                 ),
-                // SizedBox(height: 15,),
+                SizedBox(height: 15,),
                 // Padding(padding:EdgeInsets.symmetric(vertical: 0.0,horizontal:30),
                 // child:
                 // Container(
@@ -146,15 +146,21 @@ class _submitWidgetState extends State<submitWidget> {
                     // Male,
                     Container(
                       height: 50,
-                      width: 170,
+                      width: 180,
                       child: Material(
-                        borderRadius: BorderRadius.circular(13),
+                        // borderRadius: BorderRadius.circular(13),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          bottomLeft: Radius.circular(15),
+
+                        ),
+
                         shadowColor: Colors.black,
                         color: Colors.blue,
                         elevation: 12,
                         child: GestureDetector(
                           onTap: () {
-                            // Navigator.pushNamed(context, '/');
+                            // Navigator.pushNamed(context, '/malePage');
                           },
                           child: const Center(
                             child: Text(
@@ -172,15 +178,18 @@ class _submitWidgetState extends State<submitWidget> {
                    //Female
                     Container(
                       height: 50,
-                      width: 170,
+                      width: 180,
                       child: Material(
-                        borderRadius: BorderRadius.circular(13),
+                        borderRadius: BorderRadius.only(
+                          topRight:Radius.circular(15),
+                          bottomRight:Radius.circular(15),
+                        ),
                         shadowColor: Colors.black,
                         color: Colors.white,
                         elevation: 12,
                         child: GestureDetector(
                           onTap: () {
-                            // Navigator.pushNamed(context, '/');
+                            // Navigator.pushNamed(context, '/femalePage');
                           },
                           child: const Center(
                             child: Text(

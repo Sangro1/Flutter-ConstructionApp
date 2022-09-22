@@ -1,12 +1,15 @@
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:property_management/Register%20Screens/register_page.dart';
-import 'package:property_management/Uti/routes.dart';
-import 'package:property_management/Login%20Screens/Forgot.dart';
-import 'package:property_management/Login%20Screens/Home.dart';
-import 'package:property_management/Login%20Screens/login.dart';
-import 'Register Screens/Submit_page.dart';
-import 'Register Screens/Varificationcode.dart';
+import 'package:property_management/widgets/Login%20Screens/Forgot.dart';
+import 'package:property_management/widgets/Login%20Screens/Home.dart';
+import 'package:property_management/widgets/Login%20Screens/login.dart';
+import 'package:property_management/widgets/Register%20Screens/Submit_page.dart';
+import 'package:property_management/widgets/Register%20Screens/Varificationcode.dart';
+import 'package:property_management/widgets/Register%20Screens/register_page.dart';
+
 import 'Uti/colors.dart';
+import 'Uti/routes.dart';
 
 void main() {
   runApp(const MyApp());
